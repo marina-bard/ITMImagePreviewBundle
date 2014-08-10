@@ -1,0 +1,21 @@
+services:
+   itm.image.preview.subscriber:
+      class: ITM\Sonata\ImagePreviewBundle\EventListener\ImageSubscriber
+      arguments: [@service_container]
+      tags:
+          - { name: doctrine.event_subscriber }
+
+   itm.image.preview.path.resolver:
+       class: ITM\Sonata\ImagePreviewBundle\Resolver\PathResolver
+       arguments: [@service_container]
+
+   itm.image.preview.form_type:
+       class: ITM\Sonata\ImagePreviewBundle\Form\Type\ImagePreviewType
+       tags:
+           - { name: form.type, alias: itm_image_preview }
+
+   itm.image.preview.twig_extension:
+       class: ITM\Sonata\ImagePreviewBundle\Twig\Extension\ImagePreviewExtension
+       arguments: [@itm.image.preview.path.resolver, @service_container]
+       tags:
+           - { name: twig.extension }

@@ -1,0 +1,20 @@
+{
+    "name": "itm/image-preview-bundle",
+    "description": "Bundle for upload image and generate image preview",
+    "type" : "symfony-bundle",
+    "require": {
+        "liip/imagine-bundle": "dev-master"
+    },
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Samusevich Alexander",
+            "email": "aleksandeer.samusevich@itmhouse.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-0": { "ITM\\Sonata\\ImagePreviewBundle\\": "" }
+    },
+    "target-dir" : "ITM/Sonata/ImagePreviewBundle"
+}
