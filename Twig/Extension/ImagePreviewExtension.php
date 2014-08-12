@@ -8,6 +8,8 @@
 
 namespace ITM\Sonata\ImagePreviewBundle\Twig\Extension;
 
+use Symfony\Component\Filesystem\Filesystem;
+
 class ImagePreviewExtension extends \Twig_Extension
 {
     private static $pathResolver;
@@ -24,6 +26,7 @@ class ImagePreviewExtension extends \Twig_Extension
         return array(
             new \Twig_SimpleFilter('itm_ipw_url', array($this, 'resolveUrl')),
             new \Twig_SimpleFilter('itm_ipw_path', array($this, 'resolvePath')),
+            new \Twig_SimpleFilter('itm_ipw_exists', array($this, 'imageExists')),
         );
     }
 
@@ -42,6 +45,12 @@ class ImagePreviewExtension extends \Twig_Extension
     public static function resolvePath( $entity, $field )
     {
         return self::$pathResolver->getPath($entity, $field, true);
+    }
+
+    public static function imageExists( $entity, $field )
+    {
+        $fs = new Filesystem();
+        return $fs->exists( self::$pathResolver->getPath($entity, $field));
     }
 
     /**
