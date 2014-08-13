@@ -53,6 +53,7 @@ class PathResolver
         if($accessor->isReadable( $entity, $field ))
         {
             $field = $accessor->getValue($entity, $field);
+            if(empty($field)) return '';
         }
 
         return $this->getUploadPath($entity, $relative) . '/' . $field;
@@ -73,6 +74,7 @@ class PathResolver
         if($accessor->isReadable( $entity, $field ))
         {
             $field = $accessor->getValue($entity, $field);
+            if(empty($field)) return '';
         }
 
         return $config['upload_url'] . '/' . str_replace("\\", "/", get_class($entity)) . '/' . $field;
