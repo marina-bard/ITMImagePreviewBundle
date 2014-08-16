@@ -12,7 +12,7 @@
             <div class="itm_ipw_separator"></div>
 
             {% for filter in filters %}
-                <img class="itm_ipw_preview" src="{{ form.parent.vars.value|itm_ipw_path(form.vars.name) | imagine_filter(filter) }}"/>
+                <img class="itm_ipw_preview" src="{{ form.parent.vars.value|itm_ipw_path(form.vars.name) | imagine_filter(filter.name) }}"/>
             {% endfor %}
 
         {% endif %}
