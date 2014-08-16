@@ -11,6 +11,7 @@ services:
 
    itm.image.preview.form_type:
        class: ITM\Sonata\ImagePreviewBundle\Form\Type\ImagePreviewType
+       arguments: [@service_container]
        tags:
            - { name: form.type, alias: itm_image_preview }
 

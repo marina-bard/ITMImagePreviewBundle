@@ -4,11 +4,13 @@
         {% if form.parent.vars.value|itm_ipw_exists(form.vars.name) %}
 
             <link rel="stylesheet" href="{{ asset('bundles/itmimagepreview/css/style.css') }}"/>
+            <link rel="stylesheet" href="{{ asset('bundles/itmimagepreview/css/cropper.css') }}"/>
+
+            <script src="{{ asset('bundles/itmimagepreview/js/cropper.js') }}"></script>
 
             <img class="itm_ipw_original" src="{{ form.parent.vars.value|itm_ipw_url(form.vars.name) }}"/>
             <div class="itm_ipw_separator"></div>
 
-            {% set filters = itmIPW_ListFilters(form.parent.vars.value, form.vars.name) %}
             {% for filter in filters %}
                 <img class="itm_ipw_preview" src="{{ form.parent.vars.value|itm_ipw_path(form.vars.name) | imagine_filter(filter) }}"/>
             {% endfor %}
