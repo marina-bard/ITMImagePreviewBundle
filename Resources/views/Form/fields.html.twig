@@ -3,36 +3,34 @@
 
         {% if form.parent.vars.value|itm_ipw_exists(form.vars.name) %}
 
-            <link rel="stylesheet" href="{{ asset('bundles/itmimagepreview/css/style.css') }}"/>
-            <link rel="stylesheet" href="{{ asset('bundles/itmimagepreview/css/cropper.css') }}"/>
+            <link rel="stylesheet" href="{{ asset('bundles/itmimagepreview/css/imgareaselect-default.css') }}"/>
+            <link rel="stylesheet" href="{{ asset('bundles/itmimagepreview/css/styles.css') }}"/>
 
-            <script src="{{ asset('bundles/itmimagepreview/js/cropper.js') }}"></script>
+            <script src="{{ asset('bundles/itmimagepreview/js/jquery.imgareaselect.js') }}"></script>
+            <script src="{{ asset('bundles/itmimagepreview/js/relative.adapter.js') }}"></script>
 
-            <div id="itm_ipw_original_wrapper_{{ form.vars.name }}">
-                <img id="itm_ipw_original_{{ form.vars.name }}" class="itm_ipw_original" src="{{ form.parent.vars.value|itm_ipw_url(form.vars.name) }}"/>
-            </div>
-            <div class="itm_ipw_separator"></div>
-
-            {% for filter in filters %}
-
-                <div id="itm_ipw_preview_wrapper{{ filter.name }}" style="width: {{ filter.size[0] }}px; height: {{ filter.size[1] }}px; overflow: hidden; float: left; " class="itm_ipw_preview_wrapper" >
-                    <img id="itm_ipw_preview_{{ filter.name }}" class="itm_ipw_preview" src="{{ form.parent.vars.value|itm_ipw_path(form.vars.name) | imagine_filter(filter.name) }}"/>
+            <div class="phimagebuilder_widget_c" callback="">
+                <div rel="phimagebuilder">
+                    <img id="phimagebuilder_original_{{ form.vars.name }}" class="itm_ipw_original" src="{{ form.parent.vars.value|itm_ipw_url(form.vars.name) }}"/>
                 </div>
-                <script>
-                    $(document).ready
-                    (
-                        function()
-                        {
-                            $('#itm_ipw_preview_{{ filter.name }}').click(function()
-                            {
-                                var width = {{ filter.size[0] }};
-                                var height = {{ filter.size[1] }};
 
-                            });
-                        }
-                    );
-                </script>
-            {% endfor %}
+                <div class="phimagebuilder_thumb_container">
+                {% for filter in filters %}
+
+                    <div thumbIndex='{{ loop.index }}'>
+                        <div class='phimagebuilder_label_size'>{{ filter.size[0] }}x{{ filter.size[1] }}</div>
+                        <div class='phimagebuilder_label_apply'>Принять</div>
+                        <div class='phimagebuilder_label_discard'>Отмена</div>
+                        <div class='phimagebuilder_label_border'>
+                            <img thumbIndex='{{ loop.index }}' realWidth='{{ filter.size[0] }}' realHeight='{{ filter.size[1] }}' thumbName='{{ filter.name }}' src='{{ form.parent.vars.value|itm_ipw_path(form.vars.name) | imagine_filter(filter.name) }}' />
+                        </div>
+                    </div>
+
+                {% endfor %}
+                </div>
+
+                <div class="phimagebuilder_separator"></div>
+            </div>
 
         {% endif %}
 

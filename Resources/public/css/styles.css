@@ -12,6 +12,10 @@ div[rel="phimagebuilder"] img
     border:                     1px dashed #cccccc;
     margin-bottom:              5px;
 }
+.phimagebuilder_separator
+{
+    clear:                      both;
+}
 .phimagebuilder_thumb_container
 {
     width:                      245px;
