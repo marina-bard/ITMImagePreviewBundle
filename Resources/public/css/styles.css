@@ -1,0 +1,75 @@
+
+/** ------ ImageBuilder widget ------------- **/ 
+
+div[rel="phimagebuilder"]
+{
+    width:                      420px;
+    float:                      left;
+}
+div[rel="phimagebuilder"] img
+{
+    max-width:                  410px;
+    border:                     1px dashed #cccccc;
+    margin-bottom:              5px;
+}
+.phimagebuilder_thumb_container
+{
+    width:                      245px;
+    float:                      left;
+}
+.phimagebuilder_thumb_container > div
+{
+    margin-bottom:              5px;
+    margin-right:               5px;
+    border:                     1px solid #cccccc;
+    position:                   relative;
+    display:                    block;
+    overflow:                   hidden;
+}
+.phimagebuilder_thumb_container div.waiting
+{
+    opacity:                    0.2;
+}
+.phimagebuilder_label_border
+{
+    border:                     5px solid #ffffff;
+    overflow:                   hidden;
+}
+.phimagebuilder_thumb_container > div:hover
+{
+    border:                     1px solid red;
+}
+.phimagebuilder_label_size, .phimagebuilder_label_apply, .phimagebuilder_label_discard 
+{
+    display:                    block;
+    position:                   absolute;
+    padding:                    3px;
+    background:                 #cccccc;
+    opacity:                    0.7;
+    font-weight:                bold;
+    cursor:                     pointer;
+    left:                       5px;
+    top:                        5px;
+}
+div.phimagebuilder_label_apply:hover, div.phimagebuilder_label_discard:hover
+{
+    opacity:                    1;
+}
+.phimagebuilder_label_apply
+{
+    display:                    none;
+    background:                 darkgreen;
+    top:                        30px;
+    color:                      white;   
+}
+.phimagebuilder_label_discard
+{
+    display:                    none;
+    background:                 #cc0000;
+    top:                        55px;
+    color:                      white;
+}
+.phimagebuilder_thumb_container img
+{
+    cursor:                     pointer;
+}
