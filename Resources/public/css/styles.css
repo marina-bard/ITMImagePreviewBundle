@@ -1,10 +1,12 @@
 
-/** ------ ImageBuilder widget ------------- **/ 
+/** ------ ImageBuilder widget styles ------------- **/
 
 div[rel="phimagebuilder"]
 {
     width:                      420px;
+    position:                   relative;
     float:                      left;
+    box-sizing:                 content-box !important;
 }
 div[rel="phimagebuilder"] img
 {
@@ -21,6 +23,10 @@ div[rel="phimagebuilder"] img
     width:                      245px;
     float:                      left;
 }
+.phimagebuilder_thumb_container *
+{
+    box-sizing:                 content-box !important;
+}
 .phimagebuilder_thumb_container > div
 {
     margin-bottom:              5px;
@@ -29,6 +35,7 @@ div[rel="phimagebuilder"] img
     position:                   relative;
     display:                    block;
     overflow:                   hidden;
+    box-shadow:                 0 0 10px rgba(0,0,0,0.5);
 }
 .phimagebuilder_thumb_container div.waiting
 {
@@ -55,6 +62,10 @@ div[rel="phimagebuilder"] img
     left:                       5px;
     top:                        5px;
 }
+.phimagebuilder_label_size
+{
+    border-radius:              4px;
+}
 div.phimagebuilder_label_apply:hover, div.phimagebuilder_label_discard:hover
 {
     opacity:                    1;
@@ -70,7 +81,7 @@ div.phimagebuilder_label_apply:hover, div.phimagebuilder_label_discard:hover
 {
     display:                    none;
     background:                 #cc0000;
-    top:                        55px;
+    top:                        57px;
     color:                      white;
 }
 .phimagebuilder_thumb_container img

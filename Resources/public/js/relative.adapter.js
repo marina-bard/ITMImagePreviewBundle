@@ -176,7 +176,6 @@ var phImageBuilderWidget = function()
                     { 
                         parent: $('div[rel=phimagebuilder]'),
                         handles: true,    
-                        resizable: false,
                         instance: true,   // enable api functions
                         show: true,       // show area
                         fadeSpeed: 200,
@@ -243,17 +242,18 @@ var phImageBuilderWidget = function()
     
     this.saveSelection = function()
     {   
-        var selection = self.instance.getSelection(); 
-        var name      = self.curThumb.attr('thumbName');
-        var action    = self.widget.attr('callback'); // Callback URL
-        var fieldName = self.widget.find('input').attr('name');
-        
+        var selection   = self.instance.getSelection();
+        var name        = self.curThumb.attr('thumbName');
+        var action      = self.widget.attr('callback'); // Callback URL
+        var fieldName   = self.widget.find('input').attr('name');
+
         var formPost = 
         {
-            field: fieldName, 
-            name: name,       // Thumb name 
-            x: selection.x1 * ( self.realZoom / self.curZoom ),
-            y: selection.y1 * ( self.realZoom / self.curZoom ),
+            field: fieldName,
+            filepath: self.original.attr('filepath'),
+            name: name,
+            x: selection.x1 / self.curZoom, // Переводим смещение рамки в координаты превью
+            y: selection.y1 / self.curZoom,
             scale: self.scale
         };
                  

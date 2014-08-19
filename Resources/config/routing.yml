@@ -1,0 +1,3 @@
+itmimagepreview:
+    pattern: /itmimagepreview
+    defaults: { _controller: ITMImagePreviewBundle:Default:index }

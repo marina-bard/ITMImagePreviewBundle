@@ -62,7 +62,7 @@ class ImagePreviewType extends AbstractType
 
                             foreach( $liipFilters[$filter['name']]['filters'] as $liipFilterName => $liipFilter )
                             {
-                                if(!in_array($liipFilterName, ['crop', 'thumbnail'])) throw new Exception('ITMImagePreview support cron and thumbnail liip filters only');
+                                if(!in_array($liipFilterName, ['crop', 'thumbnail'])) throw new Exception('ITMImagePreview support crop and thumbnail liip filters only!');
                                 $filter = array_merge($filter, $liipFilter);
                             }
 
