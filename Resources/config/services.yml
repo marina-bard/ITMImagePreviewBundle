@@ -1,6 +1,6 @@
 services:
    itm.image.preview.subscriber:
-      class: ITM\Sonata\ImagePreviewBundle\EventListener\ImageSubscriber
+      class: ITM\Sonata\ImagePreviewBundle\EventListener\FileSubscriber
       arguments: [@service_container]
       tags:
           - { name: doctrine.event_subscriber }

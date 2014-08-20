@@ -17,7 +17,7 @@ use Symfony\Component\PropertyAccess\PropertyAccess;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
 
-class ImageSubscriber implements EventSubscriber
+class FileSubscriber implements EventSubscriber
 {
     private $container;
     private $config;
