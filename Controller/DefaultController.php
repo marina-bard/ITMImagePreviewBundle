@@ -36,11 +36,11 @@ class DefaultController extends Controller
         unset($configuration['filters']['thumbnail']);
         // Вписываем изображение в область превью
         $side = ($imgSize[0] > $imgSize[1]) ? 'heighten' : 'widen';
-        $configuration['filters']['relative_resize'][$side] = max($thumbSize);
+        $configuration['filters']['relative_resize'][$side] = max($thumbSize)*$scale;
 
         // Обрезам лишнее с указанным смещением
-        $configuration['filters']['crop']['size'] = [$thumbSize[0]/$scale, $thumbSize[1]/$scale];
-        $configuration['filters']['crop']['start'] = [$x, $y];
+        $configuration['filters']['crop']['size'] = [$thumbSize[0], $thumbSize[1]];
+        $configuration['filters']['crop']['start'] = [$x*$scale, $y*$scale];
         $configuration['filters']['upscale']['min'] = $thumbSize;
         
         $filterConfiguration->set($filterName, $configuration);
