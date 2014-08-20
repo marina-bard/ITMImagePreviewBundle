@@ -29,16 +29,19 @@ class DefaultController extends Controller
 
         $configuration = $filterConfiguration->get($filterName);
 
-        $size = $configuration['filters']['thumbnail']['size'];
+        // Получаем конечные размеры превью и размеры самого изображения
+        $thumbSize = $configuration['filters']['thumbnail']['size'];
+        $imgSize = getimagesize($filePath);
 
         unset($configuration['filters']['thumbnail']);
-        $max = max($size);
-        $side = ($size[0] > $size[1]) ? 'heighten' : 'widen';
-        $configuration['filters']['relative_resize'][$side] = $max;
+        // Вписываем изображение в область превью
+        $side = ($imgSize[0] > $imgSize[1]) ? 'heighten' : 'widen';
+        $configuration['filters']['relative_resize'][$side] = max($thumbSize);
 
-        $configuration['filters']['crop']['size'] = [$size[0]/$scale, $size[1]/$scale];
+        // Обрезам лишнее с указанным смещением
+        $configuration['filters']['crop']['size'] = [$thumbSize[0]/$scale, $thumbSize[1]/$scale];
         $configuration['filters']['crop']['start'] = [$x, $y];
-        $configuration['filters']['upscale']['min'] = $size;
+        $configuration['filters']['upscale']['min'] = $thumbSize;
         
         $filterConfiguration->set($filterName, $configuration);
 
