@@ -39,3 +39,25 @@
         {{ form_widget(form) }}
     {% endspaceless %}
 {% endblock %}
+
+{% block itm_file_preview_widget %}
+    {% spaceless %}
+
+        <link rel="stylesheet" href="{{ asset('bundles/itmimagepreview/css/styles.css') }}"/>
+
+        {% if form.parent.vars.value|itm_ipw_exists(form.vars.name) %}
+        <div class="itm_file_preview_ico_c">
+            <a href="{{ form.parent.vars.value|itm_ipw_url(form.vars.name) }}">
+                <img src="{{ asset('bundles/itmimagepreview/images/file.png') }}" />
+            </a>
+        </div>
+        <div class="itm_file_preview_info_c">
+            <span>Тип файла: </span>{{ info.mime }}<br />
+            <span>Размер файла: </span>{{ info.size|readable_filesize }}<br />
+        </div>
+        <div class="phimagebuilder_separator"></div>
+        {% endif %}
+
+        {{ form_widget(form) }}
+    {% endspaceless %}
+{% endblock %}

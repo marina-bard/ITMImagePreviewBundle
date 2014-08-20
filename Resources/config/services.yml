@@ -9,11 +9,17 @@ services:
        class: ITM\Sonata\ImagePreviewBundle\Resolver\PathResolver
        arguments: [@service_container]
 
-   itm.image.preview.form_type:
+   itm.image.preview.form_image_type:
        class: ITM\Sonata\ImagePreviewBundle\Form\Type\ImagePreviewType
        arguments: [@service_container]
        tags:
            - { name: form.type, alias: itm_image_preview }
+
+   itm.image.preview.form_file_type:
+       class: ITM\Sonata\ImagePreviewBundle\Form\Type\FilePreviewType
+       arguments: [@service_container]
+       tags:
+           - { name: form.type, alias: itm_file_preview }
 
    itm.image.preview.twig_extension:
        class: ITM\Sonata\ImagePreviewBundle\Twig\Extension\ImagePreviewExtension

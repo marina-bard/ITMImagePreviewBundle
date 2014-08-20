@@ -1,5 +1,4 @@
-
-/** ------ ImageBuilder widget styles ------------- **/
+/** ------ Image preview form type styles ------------- **/
 
 div[rel="phimagebuilder"]
 {
@@ -73,7 +72,7 @@ div.phimagebuilder_label_apply:hover, div.phimagebuilder_label_discard:hover
     display:                    none;
     background:                 darkgreen;
     top:                        33px;
-    color:                      white;   
+    color:                      white;
 }
 .phimagebuilder_label_discard
 {
@@ -91,4 +90,17 @@ div.phimagebuilder_label_apply:hover, div.phimagebuilder_label_discard:hover
 .phimagebuilder_thumb_container img
 {
     cursor:                     pointer;
+}
+
+/** ------ File preview form type styles ------------- **/
+
+.itm_file_preview_ico_c
+{
+    width:                      270px;
+    float:                      left;
+}
+.itm_file_preview_info_c
+{
+    width:                      300px;
+    float:                      left;
 }

@@ -1,6 +1,6 @@
 {
     "name": "itm/image-preview-bundle",
-    "description": "Bundle for upload image and generate image preview",
+    "description": "Bundle for upload files and generate image preview based on LiipImagineBundle",
     "type" : "symfony-bundle",
     "require": {
         "liip/imagine-bundle": "dev-master"
