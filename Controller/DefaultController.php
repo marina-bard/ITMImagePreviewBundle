@@ -30,10 +30,12 @@ class DefaultController extends Controller
         $configuration = $filterConfiguration->get($filterName);
 
         $size = $configuration['filters']['thumbnail']['size'];
-        $heighten = max($size);
 
         unset($configuration['filters']['thumbnail']);
-        $configuration['filters']['relative_resize']['heighten'] = $heighten;
+        $max = max($size);
+        $side = ($size[0] > $size[1]) ? 'heighten' : 'widen';
+        $configuration['filters']['relative_resize'][$side] = $max;
+
         $configuration['filters']['crop']['size'] = [$size[0]/$scale, $size[1]/$scale];
         $configuration['filters']['crop']['start'] = [$x, $y];
         $configuration['filters']['upscale']['min'] = $size;
