@@ -80,7 +80,7 @@ var phImageBuilderWidget = function()
         )
         
         this.initThumbs();
-                                         
+
         // instance new imgArea object
         $('.phimagebuilder_thumb_container img').click
         (
@@ -195,8 +195,16 @@ var phImageBuilderWidget = function()
                 self.curThumb.attr( 'source', self.curThumb.attr('src') );
                 self.curThumb.attr( 'src', self.original.attr('src') );
             }
-        );                    
-        
+        );
+
+        $('.phimagebuilder_label_change').click(
+            function()
+            {
+                $(this).parent().find('img').click();
+            }
+        );
+
+
         // Discard selection
         $('.phimagebuilder_label_discard').click
         ( 

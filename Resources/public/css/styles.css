@@ -50,21 +50,19 @@ div[rel="phimagebuilder"] img
 {
     border:                     1px solid red;
 }
-.phimagebuilder_label_size, .phimagebuilder_label_apply, .phimagebuilder_label_discard 
+.phimagebuilder_label_size, .phimagebuilder_label_apply, .phimagebuilder_label_discard, .phimagebuilder_label_change
 {
     display:                    block;
     position:                   absolute;
-    padding:                    3px;
     background:                 #cccccc;
     opacity:                    0.7;
-    font-weight:                bold;
-    cursor:                     pointer;
     left:                       5px;
     top:                        5px;
 }
 .phimagebuilder_label_size
 {
-    border-radius:              4px;
+    border-radius:              3px;
+    padding:                    3px;
 }
 div.phimagebuilder_label_apply:hover, div.phimagebuilder_label_discard:hover
 {
@@ -74,15 +72,21 @@ div.phimagebuilder_label_apply:hover, div.phimagebuilder_label_discard:hover
 {
     display:                    none;
     background:                 darkgreen;
-    top:                        30px;
+    top:                        33px;
     color:                      white;   
 }
 .phimagebuilder_label_discard
 {
     display:                    none;
     background:                 #cc0000;
-    top:                        57px;
+    top:                        59px;
     color:                      white;
+}
+.phimagebuilder_label_change
+{
+    top:                        auto;
+    right:                      5px;
+    bottom:                     5px;
 }
 .phimagebuilder_thumb_container img
 {
