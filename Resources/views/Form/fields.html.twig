@@ -20,9 +20,9 @@
 
                     <div thumbIndex='{{ loop.index }}'>
                         <div class='phimagebuilder_label_size'>{{ filter.size[0] }}x{{ filter.size[1] }}</div>
-                        <div class='phimagebuilder_label_apply btn btn-success btn-xs'>Принять</div>
-                        <div class='phimagebuilder_label_discard btn btn-danger btn-xs'>Отмена</div>
-                        <div class='phimagebuilder_label_change btn btn-info btn-xs'>Изменить</div>
+                        <div class='phimagebuilder_label_apply btn btn-success btn-xs'>{{ "Принять"|trans() }}</div>
+                        <div class='phimagebuilder_label_discard btn btn-danger btn-xs'>{{ "Отмена"|trans() }}</div>
+                        <div class='phimagebuilder_label_change btn btn-info btn-xs'>{{ "Изменить"|trans() }}</div>
                         <div class='phimagebuilder_label_border'>
                             <img thumbIndex='{{ loop.index }}' realWidth='{{ filter.size[0] }}' realHeight='{{ filter.size[1] }}' thumbName='{{ filter.name }}' src='{{ form.parent.vars.value|itm_ipw_path(form.vars.name) | imagine_filter(filter.name) }}' />
                         </div>

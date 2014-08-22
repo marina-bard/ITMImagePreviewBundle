@@ -88,9 +88,10 @@ class PathResolver
      * @param $field - имя поля сущности или имя файла (значение поля)
      * @return bool
      */
-    public static function isExists( $entity, $field )
+    public function isExists( $entity, $field )
     {
         $fs = new Filesystem();
-        return $fs->exists( self::getPath($entity, $field));
+        $filePath = $this->getPath($entity, $field);
+        return $fs->exists($filePath);
     }
 } 

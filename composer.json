@@ -10,10 +10,14 @@
         {
             "name": "Samusevich Alexander",
             "email": "aleksandeer.samusevich@itmhouse.com"
+        },
+        {
+            "name": "Alexei Yanochkin",
+            "email": "alexei.yanochkin@itmhouse.com"
         }
     ],
     "minimum-stability": "dev",
     "autoload": {
-        "psr-4": { "ITM\\ImagePreviewBundle\\": "" }
+        "psr-0": { "ITM\\ImagePreviewBundle\\": "" }
     }
 }
