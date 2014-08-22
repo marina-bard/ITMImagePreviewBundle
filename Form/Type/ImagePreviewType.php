@@ -6,7 +6,7 @@
  * Time: 13:23
  */
 
-namespace ITM\Sonata\ImagePreviewBundle\Form\Type;
+namespace ITM\ImagePreviewBundle\Form\Type;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Form\AbstractType;

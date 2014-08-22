@@ -6,7 +6,7 @@
  * Time: 17:09
  */
 
-namespace ITM\Sonata\ImagePreviewBundle\Twig\Extension;
+namespace ITM\ImagePreviewBundle\Twig\Extension;
 
 use ITM\Sonata\ImagePreviewBundle\Resolver\PathResolver;
 use Symfony\Component\DependencyInjection\ContainerInterface;

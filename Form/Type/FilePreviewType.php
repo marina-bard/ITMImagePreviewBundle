@@ -6,7 +6,7 @@
  * Time: 20:56
  */
 
-namespace ITM\Sonata\ImagePreviewBundle\Form\Type;
+namespace ITM\ImagePreviewBundle\Form\Type;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Form\AbstractType;
@@ -30,10 +30,13 @@ class FilePreviewType extends AbstractType
         $curEntity = $form->getParent()->getData();
         $pathResolver = $this->container->get('itm.image.preview.path.resolver');
 
-        $filePath = $pathResolver->getPath( $curEntity, $form->getName() );
+        if ( $pathResolver->isExists($curEntity, $form->getName()) )
+        {
+            $filePath = $pathResolver->getPath( $curEntity, $form->getName() );
 
-        $view->vars['info'] = stat($filePath);
-        $view->vars['info']['mime'] = mime_content_type($filePath);
+            $view->vars['info'] = stat($filePath);
+            $view->vars['info']['mime'] = mime_content_type($filePath);
+        }
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)

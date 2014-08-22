@@ -6,7 +6,7 @@
  * Time: 20:33
  */
 
-namespace ITM\Sonata\ImagePreviewBundle\EventListener;
+namespace ITM\ImagePreviewBundle\EventListener;
 
 use Doctrine\Common\EventSubscriber;
 use Doctrine\ORM\Event\LifecycleEventArgs;

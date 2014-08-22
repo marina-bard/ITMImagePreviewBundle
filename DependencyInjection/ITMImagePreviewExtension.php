@@ -1,6 +1,6 @@
 <?php
 
-namespace ITM\Sonata\ImagePreviewBundle\DependencyInjection;
+namespace ITM\ImagePreviewBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;

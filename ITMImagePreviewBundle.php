@@ -1,6 +1,6 @@
 <?php
 
-namespace ITM\Sonata\ImagePreviewBundle;
+namespace ITM\ImagePreviewBundle;
 
 use ITM\Sonata\ImagePreviewBundle\DependencyInjection\ImagePreviewExtension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

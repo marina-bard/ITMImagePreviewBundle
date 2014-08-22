@@ -6,10 +6,11 @@
  * Time: 10:06
  */
 
-namespace ITM\Sonata\ImagePreviewBundle\Resolver;
+namespace ITM\ImagePreviewBundle\Resolver;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\PropertyAccess\PropertyAccess;
+use Symfony\Component\Filesystem\Filesystem;
 
 class PathResolver
 {
@@ -78,5 +79,18 @@ class PathResolver
         }
 
         return $config['upload_url'] . '/' . str_replace("\\", "/", get_class($entity)) . '/' . $field;
+    }
+
+    /**
+     * Проверка на существование файла
+     *
+     * @param $entity - сущность
+     * @param $field - имя поля сущности или имя файла (значение поля)
+     * @return bool
+     */
+    public static function isExists( $entity, $field )
+    {
+        $fs = new Filesystem();
+        return $fs->exists( self::getPath($entity, $field));
     }
 } 

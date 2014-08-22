@@ -1,6 +1,6 @@
 <?php
 
-namespace ITM\Sonata\ImagePreviewBundle\Controller;
+namespace ITM\ImagePreviewBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;

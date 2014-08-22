@@ -1,6 +1,6 @@
 <?php
 
-namespace ITM\Sonata\ImagePreviewBundle\Tests\Controller;
+namespace ITM\ImagePreviewBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
