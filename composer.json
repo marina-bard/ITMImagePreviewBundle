@@ -15,6 +15,5 @@
     "minimum-stability": "dev",
     "autoload": {
         "psr-0": { "ITM\\Sonata\\ImagePreviewBundle\\": "" }
-    },
-    "target-dir" : "ITM/Sonata/ImagePreviewBundle"
+    }
 }
