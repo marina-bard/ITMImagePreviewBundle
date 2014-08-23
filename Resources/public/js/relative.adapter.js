@@ -30,7 +30,7 @@ var phImageBuilderWidget = function()
     var self = this;
     
      // Максимальный размер превью
-    this.thumbMaxWidth = 400;
+    this.thumbMaxWidth = 1000;
     
     this.workSide = '';
     
