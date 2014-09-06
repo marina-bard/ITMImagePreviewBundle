@@ -8,6 +8,7 @@
 
 namespace ITM\ImagePreviewBundle\Resolver;
 
+use Doctrine\Common\Util\ClassUtils;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\PropertyAccess\PropertyAccess;
 use Symfony\Component\Filesystem\Filesystem;
@@ -30,8 +31,10 @@ class PathResolver
      */
     public function getUploadPath($entity, $relative = false)
     {
+        $entityClassName = ClassUtils::getRealClass(get_class($entity));
+
         $config = $this->container->getParameter('ITMImagePreviewBundleConfiguration');
-        $path = str_replace("\\", '/', $config['upload_path'] . '/' . get_class($entity));
+        $path = str_replace("\\", '/', $config['upload_path'] . '/' . $entityClassName);
         if( !$relative )
         {
             $path = $this->container->getParameter('kernel.root_dir') . '/../web/' . $path;
@@ -78,7 +81,9 @@ class PathResolver
             if(empty($field)) return '';
         }
 
-        return $config['upload_url'] . '/' . str_replace("\\", "/", get_class($entity)) . '/' . $field;
+        $entityClassName = ClassUtils::getRealClass(get_class($entity));
+
+        return $config['upload_url'] . '/' . str_replace("\\", "/", $entityClassName) . '/' . $field;
     }
 
     /**
