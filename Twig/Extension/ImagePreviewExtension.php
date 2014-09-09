@@ -8,7 +8,7 @@
 
 namespace ITM\ImagePreviewBundle\Twig\Extension;
 
-use ITM\ImagePreviewBundle\Resolver\PathResolver;
+use ITM\FilePreviewBundle\Resolver\PathResolver;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Filesystem\Filesystem;
 
