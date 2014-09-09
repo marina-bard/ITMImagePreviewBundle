@@ -105,6 +105,7 @@ var phImageBuilderWidget = function()
                            
                 // Show controls
                 container.find('.phimagebuilder_label_apply, .phimagebuilder_label_discard').show();
+                container.find('.phimagebuilder_label_change').hide();
                 
                 // Fix thumb container size                                                                    
                 container.find('.phimagebuilder_label_border').css('width', self.curThumb.width() + 'px');
@@ -286,6 +287,7 @@ var phImageBuilderWidget = function()
     {
         $('.phimagebuilder_label_discard').hide(); 
         $('.phimagebuilder_label_apply').hide();
+        $('.phimagebuilder_label_change').show();
         
         self.curThumb.css( 'margin-left', 0 + 'px' );
         self.curThumb.css( 'margin-top', 0 + 'px' );
@@ -339,5 +341,10 @@ var phImageBuilderWidget = function()
                 $(this).parent().height( (height / k)+10 );
             }
         );
+
+        var containers = $('.phimagebuilder_buttons');
+        containers.each ( function(){
+            $(this).find('.phimagebuilder_label_apply, .phimagebuilder_label_discard').css("width",(parseInt($(this).css("width"))-10)/2-12+"px");
+        });
     }
 }
