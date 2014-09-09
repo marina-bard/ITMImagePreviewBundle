@@ -9,7 +9,7 @@
     "repositories": [{
         "type": "vcs",
         "url": "http://gitlab.itmclient.com/symfony-bundles/itmfilepreviewbundle.git"
-    },
+    }],
     "license": "proprietary",
     "authors": [
         {
