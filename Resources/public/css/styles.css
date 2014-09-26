@@ -1,4 +1,7 @@
 /** ------ Image preview form type styles ------------- **/
+img {
+    max-width: 10000px !important;
+}
 
 div[rel="phimagebuilder"]
 {

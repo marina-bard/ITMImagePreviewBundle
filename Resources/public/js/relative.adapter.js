@@ -61,11 +61,11 @@ var phImageBuilderWidget = function()
             $(this).removeAttr("width")
                    .removeAttr("height")
                    .css({ width: "", height: ""})
-                   .css('max-width', '10000px');
+                   .attr('style','max-width: 10000px !important');
          
             $(this).attr( 'realWidth', $(this).width() );
             $(this).attr( 'realHeight', $(this).height() );
-            $(this).css('max-width', max);
+            $(this).attr('style','max-width: 410px !important');
         });
          
         // для тех браузеров, которые подгрузку из кеша не считают загрузкой
