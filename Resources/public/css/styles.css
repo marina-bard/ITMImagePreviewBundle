@@ -71,14 +71,21 @@ div.phimagebuilder_label_apply:hover, div.phimagebuilder_label_discard:hover
 {
     display:                    none;
     background:                 darkgreen;
-    top:                        33px;
+    left:                       5px;
+    top:                        auto;
+    bottom:                     5px;
     color:                      white;
+    width:                      50%;
 }
 .phimagebuilder_label_discard
 {
+    width:                      50%;
     display:                    none;
     background:                 #cc0000;
-    top:                        59px;
+    top:                        auto;
+    bottom:                     5px;
+    left:                       auto;
+    right:                      5px;
     color:                      white;
 }
 .phimagebuilder_label_change
@@ -90,17 +97,4 @@ div.phimagebuilder_label_apply:hover, div.phimagebuilder_label_discard:hover
 .phimagebuilder_thumb_container img
 {
     cursor:                     pointer;
-}
-
-/** ------ File preview form type styles ------------- **/
-
-.itm_file_preview_ico_c
-{
-    width:                      270px;
-    float:                      left;
-}
-.itm_file_preview_info_c
-{
-    width:                      300px;
-    float:                      left;
 }
