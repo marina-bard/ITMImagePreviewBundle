@@ -4,7 +4,7 @@
     "type" : "symfony-bundle",
     "require": {
         "liip/imagine-bundle": "dev-master",
-        "itm/file-preview-bundle": "dev-develop"
+        "itm/file-preview-bundle": "dev-master"
     },
     "repositories": [{
         "type": "vcs",
