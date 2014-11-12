@@ -98,7 +98,7 @@ var phImageBuilderWidget = function()
                 
                 self.widget   = self.curThumb.parents('.phimagebuilder_widget_c');    
                 self.original = $(self.widget).find('div[rel=phimagebuilder] > img');
-                var container = $('.phimagebuilder_thumb_container div[thumbIndex='+self.curThumb.attr('thumbIndex')+']');
+                var container = self.widget.find('.phimagebuilder_thumb_container div[thumbIndex='+self.curThumb.attr('thumbIndex')+']');
                 
                 realImageSize.width = self.original.attr('realWidth');
                 realImageSize.height = self.original.attr('realHeight');
@@ -122,7 +122,7 @@ var phImageBuilderWidget = function()
                 // selected area size                
                 selectedZone.width = self.curThumb.width();
                 selectedZone.height = self.curThumb.height();
-                
+
                 // Scale selected area     
                 if( aspectRatio > 1 )
                 {
