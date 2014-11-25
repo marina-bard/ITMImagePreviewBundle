@@ -65,7 +65,8 @@ var phImageBuilderWidget = function()
 
             $(this).attr( 'realWidth', $(this).width() );
             $(this).attr( 'realHeight', $(this).height() );
-            $(this).css('max-width', max);
+            $(this).css('max-width', '410px');
+            $(this).css('width', '410px');
         });
 
         // для тех браузеров, которые подгрузку из кеша не считают загрузкой
