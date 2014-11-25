@@ -4,11 +4,11 @@
     "type" : "symfony-bundle",
     "require": {
         "liip/imagine-bundle": "dev-master",
-        "itm/file-preview-bundle": "dev-master"
+        "itm/file-preview-bundle": "dev-develop"
     },
     "repositories": [{
         "type": "vcs",
-        "url": "http://gitlab.itmclient.com/symfony-bundles/itmfilepreviewbundle.git"
+        "url": "http://stash.itmclient.com/scm/sb/itmfilepreviewbundle.git"
     }],
     "license": "proprietary",
     "authors": [
