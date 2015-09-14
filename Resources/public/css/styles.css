@@ -1,5 +1,5 @@
 /** ------ Image preview form type styles ------------- **/
-img {
+.phimagebuilder img {
     max-width: 10000px !important;
 }
 
