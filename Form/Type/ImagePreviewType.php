@@ -15,6 +15,7 @@ use Symfony\Component\Form\Exception\InvalidConfigurationException;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormView;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 use ITM\Sonata\ImagePreviewBundle\Twig\Extension;
 use Symfony\Component\Security\Acl\Exception\Exception;
@@ -78,19 +79,12 @@ class ImagePreviewType extends AbstractType
         $view->vars['filters'] = $filters;
     }
 
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
-    {
-        $resolver->setDefaults(array(
-
-        ));
-    }
-
     public function getParent()
     {
-        return 'file';
+        return FileType::class;
     }
 
-    public function getName()
+    public function getBlockPrefix()
     {
         return 'itm_image_preview';
     }
