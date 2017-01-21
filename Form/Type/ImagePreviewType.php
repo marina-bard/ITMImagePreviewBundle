@@ -88,4 +88,9 @@ class ImagePreviewType extends AbstractType
     {
         return 'itm_image_preview';
     }
+    
+    public function getName()
+    {
+        return $this->getBlockPrefix();
+    }
 } 
