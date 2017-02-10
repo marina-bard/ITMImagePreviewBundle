@@ -10,15 +10,11 @@ namespace ITM\ImagePreviewBundle\Form\Type;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\AbstractTypeExtension;
 use Symfony\Component\Form\Exception\InvalidConfigurationException;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormView;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
-
-use ITM\Sonata\ImagePreviewBundle\Twig\Extension;
-use Symfony\Component\Security\Acl\Exception\Exception;
+use Symfony\Component\HttpKernel\Kernel;
 
 class ImagePreviewType extends AbstractType
 {
@@ -81,11 +77,16 @@ class ImagePreviewType extends AbstractType
 
     public function getParent()
     {
-        return FileType::class;
+        return (intval(Kernel::VERSION[0]) >= 3) ? FileType::class : 'file';
     }
 
     public function getBlockPrefix()
     {
         return 'itm_image_preview';
+    }
+    
+    public function getName()
+    {
+        return $this->getBlockPrefix();
     }
 } 
